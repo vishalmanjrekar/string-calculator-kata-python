@@ -8,8 +8,14 @@ class StringCalculator:
         delimiter = ",|\n"  # Default delimiters
         
         if numbers.startswith("//"):
-            delimiter, numbers = numbers[2:].split("\n", 1)  # Extract custom delimiter
-            delimiter = re.escape(delimiter)  # Escape special characters for regex
+            delimiter, numbers = numbers[2:].split("\n", 1)
+            delimiter = re.escape(delimiter)
         
         num_list = re.split(delimiter, numbers)
-        return sum(int(num) for num in num_list)
+        num_list = [int(num) for num in num_list]
+        
+        negatives = [num for num in num_list if num < 0]
+        if negatives:
+            raise ValueError(f"Negatives not allowed: {', '.join(map(str, negatives))}")
+        
+        return sum(num_list)
