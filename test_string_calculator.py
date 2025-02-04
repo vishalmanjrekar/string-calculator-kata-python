@@ -24,6 +24,11 @@ class TestStringCalculator(unittest.TestCase):
     def test_custom_delimiter(self):
         self.assertEqual(self.calculator.add("//;\n1;2"), 3)
 
+    def test_negative_numbers_raise_exception(self):
+        with self.assertRaises(ValueError) as context:
+            self.calculator.add("1,-2,3,-4")
+        self.assertEqual(str(context.exception), "Negatives not allowed: -2, -4")
+
 
 if __name__ == "__main__":
     unittest.main()
