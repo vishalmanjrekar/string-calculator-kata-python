@@ -17,7 +17,7 @@ This repository contains the **String Calculator Kata**, implemented in Python u
 ### **1. Clone the Repository**
 
 ```bash
-git clone <https://github.com/vishalmanjrekar/string-calculator-kata-python>
+git clone https://github.com/vishalmanjrekar/string-calculator-kata-python
 cd string-calculator-kata-python
 ```
 
@@ -76,7 +76,7 @@ print(calculator.add("//;\n1;2;3"))  # Output: 6
 
 ---
 
-TDD Workflow (Commit History)
+## TDD Workflow (Commit History)
 This project follows the Red-Green-Refactor cycle of TDD:
 
 - Write a failing test (Red)
